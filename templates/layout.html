@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block title%}
+      
+    {%endblock%}
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+   {% comment %} GSAP CDN {% endcomment %}
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  {%block scripts%}
+  {%endblock%}
+  
+  <style>
+    input{
+      color: black !important;
+      width: 100%;
+    }
+  </style>
+
+</head>
+<body class="relative {%block body_class%}bg-[url({% static 'images/bg.jpg' %})] h-screen overflow-hidden bg-no-repeat bg-cover w-full flex items-center justify-center{%endblock%}">
+   
+  <nav class="absolute bg-slate-300 text-[black] text-2xl h-[50px] fixed w-full p-2.5 top-[0%]">
+    {% block navbar%}
+    {% endblock %}
+  </nav>
+  <h1 class="absolute text-center absolute inset-x-0 top-20 text-white heading text-5xl">
+    {%block heading%}
+    {%endblock%}
+  </h1>
+
+  <main class="text-2xl p-20 flex flex-col items-center justify-center text-white">
+    {%block content%}
+    {% endblock %}
+  </main>
+
+</body>
+</html>

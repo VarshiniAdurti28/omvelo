@@ -1,0 +1,5 @@
+[build]
+  type = "python"
+  python_version = "3.9"
+  install_dependencies = true
+  start_command = "gunicorn myproject.wsgi"
